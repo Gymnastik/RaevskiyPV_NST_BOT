@@ -1,19 +1,19 @@
 
 
-
 """
 2This is a echo bot.
 3It echoes any incoming text messages.
 """
-from os import environ
-from dotenv import load_dotenv
-import logging 
-from aiogram import Bot, Dispatcher, executor, types
 
+import logging
+from os import environ
+
+from aiogram import Bot, Dispatcher, executor, types
+from dotenv import load_dotenv
 
 load_dotenv()
 BOT_TOKEN = environ.get('BOT_TOKEN')
- 
+
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -21,7 +21,8 @@ logging.basicConfig(level=logging.INFO)
 # Initialize bot and dispatcher
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher(bot)
-#comment
+# comment
+
 
 @dp.message_handler(commands=['start', 'help'])
 async def send_welcome(message: types.Message):
@@ -29,7 +30,6 @@ async def send_welcome(message: types.Message):
     This handler will be called when user sends `/start` or `/help` command
     """
     await message.reply("Hi!\nI'm EchoBot!\nPowered by aiogram.")
-
 
 
 @dp.message_handler()
@@ -41,3 +41,4 @@ async def echo(message: types.Message):
 
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)
+ 
