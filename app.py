@@ -5,10 +5,14 @@
 2This is a echo bot.
 3It echoes any incoming text messages.
 """
- 
+from os import environ
+from dotenv import load_dotenv
 import logging 
 from aiogram import Bot, Dispatcher, executor, types
-from config import BOT_TOKEN
+
+
+load_dotenv()
+BOT_TOKEN = environ.get('BOT_TOKEN')
  
 
 # Configure logging
