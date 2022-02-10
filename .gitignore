@@ -2,3 +2,5 @@
 /__pycache__
 /.env
 config.py
+*.code-workspace
+/.vscode
