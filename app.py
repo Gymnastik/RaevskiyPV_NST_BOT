@@ -17,7 +17,7 @@ logging.basicConfig(level=logging.INFO)
 # Initialize bot and dispatcher
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher(bot)
-
+#comment
 
 @dp.message_handler(commands=['start', 'help'])
 async def send_welcome(message: types.Message):
