@@ -1,2 +1,4 @@
 /nst_bot
 /__pycache__
+/.env
+config.py
