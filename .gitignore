@@ -1,5 +1,5 @@
 /nst_bot
-/__pycache__
+**/__pycache__
 /.env
 config.py
 *.code-workspace
