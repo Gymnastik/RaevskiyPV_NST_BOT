@@ -12,7 +12,7 @@ python -m
 - as;ldkfj
 - askldjf
   
-$x \not = sin^2(x)$
+$$x \not = sin^2(x)$$
 
 `asdk` <br>
 ___
