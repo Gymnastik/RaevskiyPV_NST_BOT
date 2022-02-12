@@ -5,7 +5,7 @@ import keyboards as kb
 
 @dp.message_handler(commands=['help'], state="*")
 async def help_msg(msg):
-    logging.info(f"New User!", msg.chat.id)
+    logging.info(f"New User!:{msg.from_user.id}")
     await msg.answer(kb.start_message, reply_markup=kb.start_keyboard())
     await bot.send_message(msg.chat.id, "Команды чат-бота:\n/start - начало работы и общий сброс\n/help\
  - помощь\n/user_style - стиль пользователя (это режим по умолчанию). Сначала надо загрузить изображение content,\

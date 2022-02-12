@@ -1,7 +1,7 @@
 from aiogram import types
 from loader import dp, bot
 import keyboards as kb
-from PIL import Image
+from PIL import Image, ImageOps
 import logging
 import io
 
@@ -11,7 +11,7 @@ async def help_msg(msg):
     file_info = await bot.get_file(image.file_id)
     img = await bot.download_file(file_info.file_path)
     ttt = Image.open(img)
-    ttt = ttt.resize((50,50))
+    ttt = ImageOps.contain(ttt,(256,256))
     bio = io.BytesIO()
     bio.name ='output.jpeg'
     ttt.save(bio, 'JPEG')
