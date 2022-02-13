@@ -4,7 +4,7 @@
 2. [Внешний вид бота](#visual)
 3. [Особенности реализации]()
 4. [Deploy]()
-## <p align="center">Описание проекта</p><a name="introduction"></a>
+## <a name="introduction"></a><p align="center">Описание проекта</p>
 Some text
 Some text<br>
 Some text<br>
@@ -41,7 +41,7 @@ Some text<br>
 Some text<br>
 Some text<br>
 
-## <p align="center">Внешний вид бота. Основные экраны.</p><a name="visual"></a>
+## </p><a name="visual"></a><p align="center">Внешний вид бота. Основные экраны.
 | Стартовый экран | Экран примеров | Вывод результата |
 | --- | --- | --- |
 | <img src='images/examples/main_screen.jpg' align="left" vspace="5" hspace="5" width=305> | <img src='images/examples/examples.jpg' align="left" vspace="5" hspace="5" width=310> | <img src='images/examples/transfer.jpg' align="left" vspace="5" hspace="5" width=305> |
