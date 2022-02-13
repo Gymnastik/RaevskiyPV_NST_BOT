@@ -1,13 +1,35 @@
+import asyncio
 import glob
 import logging
-import text_messages as ms
+import threading
+from os import environ
 
 import keyboards as kb
-from aiogram import types
+import text_messages as ms
+from aiogram import Bot, types
 from aiogram.dispatcher import FSMContext
-from loader import bot, dp
-from states.base import BotStates
+from dotenv import load_dotenv
+from loader import bot, dp, loop
 from models import gatys
+from states.base import BotStates
+
+load_dotenv()
+
+# Функция вызывающая сам трансфер и отсылающая пользователю результат
+# запускаем в потоке через threading.Trhread, так бот не будет зависать во время обработки изображений
+# и сможет общаться с другими пользователями.
+async def style_transfer(message, style_image, content_image):
+    new_image = gatys.run_nst(style_image, content_image)
+
+    logging.info(f"Finished Style Transfer")
+
+    tmp_bot = Bot(token=environ.get('BOT_TOKEN'), loop=loop)
+    await tmp_bot.send_photo(message.chat.id, photo=new_image)
+    await tmp_bot.send_message(message.chat.id, "Готово! \U0001F44D\U0001F44D \n\nЕсли хочешь попробовать еще, жми \U0001F447\U0001F447",
+                               reply_markup=kb.start_keyboard())
+    await tmp_bot.close()
+
+
 
 # Пишем в переменную описание загруженных стилей
 with open("images/styles/styles_description.txt", encoding='UTF-8') as f:
@@ -104,10 +126,11 @@ async def style_download(msg: types.Message, state: FSMContext):
         style_img = data['style_img']
         content_img = data['content_img']
         await state.reset_state()
-        await msg.answer("Идёт обработка, это может занять около 5 минут...  \n\U000023F1   \U000023F1   \U0001F51C")
-        result = gatys.run_nst(style_img, content_img)
-        await bot.send_photo(msg.chat.id, result)
-        await msg.answer("Готово! \U0001F44D\U0001F44D \n\nЕсли хочешь попробовать еще, жми \U0001F447\U0001F447", reply_markup=kb.start_keyboard())
+        await msg.answer("Идёт обработка, это может занять до 10 минут...  \n\U000023F1   \U000023F1   \U0001F51C")
+        threading.Thread(
+                target=lambda mess, style_img, content_img:
+                asyncio.run(style_transfer(mess, style_img, content_img)),
+                args=(msg, style_img, content_img)).start()
     
     else:
         await msg.answer("Прежде чем отправлять мне картинки нажми кнопку\n *Перенести стиль* \U0001F447", 

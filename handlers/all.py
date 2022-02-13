@@ -5,7 +5,7 @@ import keyboards as kb
 import text_messages as ms
 
 
-# Эхо хендлер, куда летят текстовые сообщения без указанного состояния
+# Хэндлер, обрабатывающий сообщения, которые не попадают в остальные хэндлеры.
 @dp.message_handler(state='*')
 async def bot_echo(message: types.Message):
     await message.answer('Я бы пообщался с тобой,'

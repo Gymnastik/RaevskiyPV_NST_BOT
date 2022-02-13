@@ -1,4 +1,10 @@
-# 1. My diploma project at MIPT Deep Learning School
+# <p align="center">Телеграм-бот для переноса стиля</p>
+## <p align="center">Aiogram StyleTransfer Long polling Deploy</p>
+## ||     Стартовый экран:        ||   Экран примеров:     ||     Вывод результата:  ||
+<img src='images/examples/main_screen.jpg' align="left" vspace="5" hspace="5" width=290>
+<img src='images/examples/examples.jpg' align="left" vspace="5" hspace="5" width=290>
+<img src='images/examples/transfer.jpg' align="left" vspace="5" hspace="5" width=280>
+1. My diploma project at MIPT Deep Learning School
 - [1. My diploma project at MIPT Deep Learning School](#1-my-diploma-project-at-mipt-deep-learning-school)
   - [1.1. This is the introduction <a name="introduction"></a>](#11-this-is-the-introduction-)
 

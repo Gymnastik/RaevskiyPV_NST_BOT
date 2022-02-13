@@ -1,5 +1,7 @@
 from aiogram import types
 
+# Inline-клавиатуры для бота
+
 def start_keyboard():
     buttons = [
         types.InlineKeyboardButton(text="\U00002194 Перенести стиль", callback_data="button_style"),

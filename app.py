@@ -12,7 +12,7 @@ async def on_startup(dispatcher):
     await set_default_commands(dispatcher)
 
 # Функция, которая запускается при отключении бота
-async def on_shutdown(dispatcher):
+async def on_shutdown():
     await storage.close()
     logging.info('Bye!')
 
