@@ -1,7 +1,7 @@
 # <p align="center">Телеграм-бот для переноса стиля</p>
 ## <p align="center">Aiogram StyleTransfer Long polling Deploy</p>
 ## ||     Стартовый экран:        ||   Экран примеров:     ||     Вывод результата:  ||
-<img src='images/examples/main_screen.jpg' align="left" vspace="5" hspace="5" width=310>
+<img src='images/examples/main_screen.jpg' align="left" vspace="5" hspace="5" width=305>
 <img src='images/examples/examples.jpg' align="left" vspace="5" hspace="5" width=310>
 <img src='images/examples/transfer.jpg' align="left" vspace="5" hspace="5" width=305>
 1. My diploma project at MIPT Deep Learning School
