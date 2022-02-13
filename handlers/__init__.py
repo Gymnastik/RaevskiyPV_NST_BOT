@@ -1,4 +1,3 @@
 from . import start
-from . import help
-from . import photo
-from . import echo
+from . import transfer
+from . import all
