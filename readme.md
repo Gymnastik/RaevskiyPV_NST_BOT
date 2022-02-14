@@ -33,7 +33,7 @@
 ## <a name="deploy"></a><p align="center">Deploy</p>
 - Бот задеплоен на VPS.
 - Система Debian 11.2
-- Запущен на long polling. С вебхуками возникли сложности с добыванием статического IP.
+- Запущен на long polling.
 - Среднее время обработки изображения - 8 минут.
 
 ## <a name="project_structure"></a><p align="center">Структура проекта</p>
